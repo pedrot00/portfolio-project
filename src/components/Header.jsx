@@ -1,7 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const Header = () => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 10) {
+                setIsScrolled(true);
+            } else {
+                setIsScrolled(false);
+            }
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
 
     const toggleSidebar = () => {
         setIsSidebarOpen(!isSidebarOpen);
@@ -17,24 +31,43 @@ const Header = () => {
         { name: "Algoritmos", path: "#algoritmos" },
         { name: "Contato", path: "#contato" }
     ];
-
+    
     return (
         <>
-            <header className="bg-red-100 h-18 p-4 flex justify-between items-center md:justify-around fixed top-0 left-0 right-0 z-10">
-                <img
-                    src="/images/logo.png" 
-                    alt="logo" 
-                    className="h-10 w-auto object-contain" 
-                />
+            <header 
+                className={`bg-gray-700 h-18 p-3 flex justify-between md:justify-between items-center fixed top-0 left-0 right-0 z-10 transition-all duration-300 ${
+                    isScrolled ? "bg-opacity-20 shadow-md" : "bg-opacity-80"
+                }`}
+            >   
+                <i className="fi fi-sr-copyright text-3xl flex md:ml-20 text-black"></i>
+
+                {/* Desktop Navigation */}
+                <nav className="hidden md:flex justify-around absolute left-90 right-20 mx-auto">
+                    <ul className="flex space-x-8">
+                        {menuItems.map((item, index) => (
+                            <li key={index}>
+                                <a 
+                                    href={item.path} 
+                                    className="relative text-white hover:text-white font-medium py-2 px-1 group"
+                                >
+                                    {item.name}
+                                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
+                </nav>
+
+                {/* Mobile Menu Icon */}
                 <img 
                     src="/images/menuIcon.png" 
                     alt="menu" 
-                    className="cursor-pointer h-8 w-auto object-contain"
+                    className="cursor-pointer h-8 w-auto object-contain md:hidden"
                     onClick={toggleSidebar}
                 />
             </header>
 
-            {/* Overlay para fechar o sidebar ao clicar fora */}
+            {/* Mobile menu overlay */}
             {isSidebarOpen && (
                 <div 
                     className="fixed inset-0 bg-black bg-opacity-50 z-20"
@@ -42,9 +75,9 @@ const Header = () => {
                 />
             )}
 
-            {/* Sidebar */}
+            {/* Mobile sidebar */}
             <div 
-                className={`fixed top-0 right-0 h-full w-64 bg-red-100 shadow-lg transform transition-transform duration-300 ease-in-out z-30 ${
+                className={`fixed bg-gray-700 top-0 right-0 h-full w-64 shadow-lg transform transition-transform duration-300 ease-in-out z-30 ${
                     isSidebarOpen ? "translate-x-0" : "translate-x-full"
                 }`}
             >
@@ -67,7 +100,7 @@ const Header = () => {
                                 <li key={index}>
                                     <a 
                                         href={item.path} 
-                                        className="block py-2 px-4 text-gray-800 hover:bg-gray-100 rounded transition-colors"
+                                        className="block py-2 px-4 text-white hover:bg-gray-100 rounded transition-colors"
                                         onClick={closeSidebar}
                                     >
                                         {item.name}
