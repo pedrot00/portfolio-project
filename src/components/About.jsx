@@ -5,14 +5,14 @@ const About = () => {
   return (
     <section 
       id="sobre" 
-      className="self-center flex-col md:flex-row-reverse justify-center items-center mt-32"
+      className="self-center flex-col md:flex-row-reverse justify-center items-center md:mt-32"
     > 
-      <div className="flex flex-col md:flex-row-reverse justify-center items-center p-4 md:mr-52 mt-16 md:mt-0 transform translate-y-[-10%]">
+      <div className="flex flex-col md:flex-row-reverse justify-center items-center p-4 md:mr-52 md:mt-0 transform translate-y-[-10%]">
         <div className="flex flex-col items-center p-3 md:w-1/2">
           <img 
             src={mainFoto} 
             alt="mainFoto" 
-            className="bg-contain md:w-2/3 md:rounded-full border-2 border-white" 
+            className="bg-contain md:w-2/3 md:rounded-full " 
           />
 
           {/* Social Media Icons */}
@@ -65,10 +65,13 @@ const About = () => {
             href="https://wa.me/5574999347208" 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="flex md:self-center md:ml-32 mt-8 md:mt-12 px-6 py-2 border border-white border-opacity-50 text-white hover:bg-white hover:text-black transition-all duration-300 rounded-md font-medium"
+            className="flex md:self-center md:ml-32 mt-8 md:mt-12 px-6 py-2 bg-white text-black border-2 border-transparent 
+                      hover:bg-black hover:text-white hover:border-white 
+                      transition-all duration-300 ease-out rounded-md font-medium transform hover:-translate-y-1"
           >
             Contate-me
           </a>
+
         </div>
       </div>
     </section>
