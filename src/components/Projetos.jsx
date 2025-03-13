@@ -19,6 +19,7 @@ const Projetos = () =>{
                     PROJECTS
                 </div>
                 <div className="text-5xl">Done projects</div>
+                <div className="mt-8 w-16 h-1 bg-white bg-opacity-50 rounded-full mb-8"></div>
 
                 <div className="p-6 text-center flex flex-col items-center">
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>

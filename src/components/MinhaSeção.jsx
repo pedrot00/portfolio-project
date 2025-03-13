@@ -9,27 +9,43 @@ function MinhaSeção() {
       imagem: imagem1,
       data: "10 Março, 2025",
       titulo: "1",
+      githubLink: "https://github.com/pedrot00"
     },
     {
         imagem: imagem1,
         data: "10 Março, 2025",
         titulo: "2",
-        descricao: "dawdpijawkidodadwadwadwadwaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaawawjdwaiodjawiodajwdawawdwadaw"
+        githubLink: "https://github.com/pedrot00"
       },
       {
         imagem: imagem1,
         data: "10 Março, 2025",
         titulo: "3",
+        githubLink: "https://github.com/pedrot00"
       },
       {
         imagem: imagem1,
         data: "10 Março, 2025",
         titulo: "4",
+        githubLink: "https://github.com/pedrot00"
       },
       {
         imagem: imagem1,
         data: "10 Março, 2025",
         titulo: "5",
+        githubLink: "https://github.com/pedrot00"
+      },
+      {
+        imagem: imagem1,
+        data: "10 Março, 2025",
+        titulo: "5",
+        githubLink: "https://github.com/pedrot00"
+      },
+      {
+        imagem: imagem1,
+        data: "10 Março, 2025",
+        titulo: "5",
+        githubLink: "https://github.com/pedrot00"
       },
   ];
 

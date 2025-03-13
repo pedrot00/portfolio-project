@@ -4,8 +4,10 @@ import "./App.css";
 import Header from "./components/Header";
 import About from "./components/About";
 import Projetos from "./components/Projetos";
-import Algoritmos from "./components/Algoritmos";
 import MinhaSeção from "./components/MinhaSeção";
+import Contato from "./components/Contato";
+import Footer from "./components/Footer";
+import Formacao from "./components/Formacao";
 
 function App() {
   return (
@@ -13,7 +15,10 @@ function App() {
       <Header />
       <About />
       <Projetos />
+      <Formacao />
       <MinhaSeção />
+      <Contato />
+      <Footer />
     </div>
   );
 }
