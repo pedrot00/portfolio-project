@@ -26,7 +26,7 @@ const Projetos = () =>{
                 </div>      
             </div>
 
-            <div className=" md:grid md:grid-cols-2 md:p-32 md:pt:12 ">
+            <div className=" md:grid md:grid-cols-2 md:p-32 md:pt-12 ">
                 <Projeto 
                     imagem={projeto1}
                     descricao={"projeto1"}

@@ -1,8 +1,11 @@
 import React from "react";
 import "./App.css";
+
 import Header from "./components/Header";
 import About from "./components/About";
 import Projetos from "./components/Projetos";
+import Algoritmos from "./components/Algoritmos";
+import MinhaSeção from "./components/MinhaSeção";
 
 function App() {
   return (
@@ -10,6 +13,7 @@ function App() {
       <Header />
       <About />
       <Projetos />
+      <MinhaSeção />
     </div>
   );
 }
